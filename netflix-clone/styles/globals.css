@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-[#141414] text-white
+    }
+}
+@layer components {
+    .headerLink{
+        @apply cursor-pointer text-sm font-light transition duration-[.5s] hover:text-[#b3b3b3] text-[#e5e5e5]
+    }
+}
