@@ -3,6 +3,7 @@ import Image from "next/image";
 import Header from "../components/Header";
 import requests from "../utils/requests";
 import { Movie } from "../typings";
+import Banner from "../components/Banner";
 
 interface Props {
   netflixOriginals: Movie[];
@@ -12,12 +13,11 @@ interface Props {
 }
 
 const Home = ({ netflixOriginals }: Props) => {
-  console.log(netflixOriginals);
-
   return (
     <div>
       <p></p>
       <Header />
+      <Banner netflixOriginals={netflixOriginals} />
     </div>
   );
 };
