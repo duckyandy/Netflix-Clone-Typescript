@@ -6,6 +6,9 @@ import { Movie } from "../typings";
 import Banner from "../components/Banner";
 import Row from "../components/Row";
 import Head from "next/head";
+import Modal from "../components/Modal";
+import { modalState } from "../atoms/modalAtom";
+import { useRecoilState } from "recoil";
 
 interface Props {
   netflixOriginals: Movie[];
@@ -20,18 +23,21 @@ const Home = ({
   topRated,
   actionMovies,
 }: Props) => {
+  const showModal = useRecoilState(modalState);
+
   return (
-    <div>
+    <div className="bg-gradient-to-b from-gray-900/10 to-black">
       <Head>Home - Netflix</Head>
       <Header />
-      <main>
+      <main className="space-y-8">
         <Banner netflixOriginals={netflixOriginals} />
-        <section>
+        <section className="ml-3 md:space-y-20 md:ml-5">
           <Row title="Trending Now" movies={trendingNow} />
           <Row title="Top Rated" movies={topRated} />
           <Row title="Action Movies" movies={actionMovies} />
         </section>
       </main>
+      {showModal && <Modal />}
     </div>
   );
 };

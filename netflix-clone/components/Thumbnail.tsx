@@ -16,6 +16,13 @@ function Thumbnail({ movie }: Props) {
     <div
       className="relative h-28 min-w-[180px] cursor-pointer transition duration-200
     ease-in md:h-36 md:min-w-[260px] md:hover:scale-120"
+      onClick={() => {
+        setCurrentMovie(movie);
+        setShowModal(true);
+        setTimeout(() => {
+          console.log(currentMovie);
+        }, 100);
+      }}
     >
       <Image
         alt="thumbnail_image"
