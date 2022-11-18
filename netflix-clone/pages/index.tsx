@@ -4,6 +4,8 @@ import Header from "../components/Header";
 import requests from "../utils/requests";
 import { Movie } from "../typings";
 import Banner from "../components/Banner";
+import Row from "../components/Row";
+import Head from "next/head";
 
 interface Props {
   netflixOriginals: Movie[];
@@ -12,12 +14,24 @@ interface Props {
   actionMovies: Movie[];
 }
 
-const Home = ({ netflixOriginals }: Props) => {
+const Home = ({
+  netflixOriginals,
+  trendingNow,
+  topRated,
+  actionMovies,
+}: Props) => {
   return (
     <div>
-      <p></p>
+      <Head>Home - Netflix</Head>
       <Header />
-      <Banner netflixOriginals={netflixOriginals} />
+      <main>
+        <Banner netflixOriginals={netflixOriginals} />
+        <section>
+          <Row title="Trending Now" movies={trendingNow} />
+          <Row title="Top Rated" movies={topRated} />
+          <Row title="Action Movies" movies={actionMovies} />
+        </section>
+      </main>
     </div>
   );
 };

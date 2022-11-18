@@ -2,6 +2,8 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { baseURL } from "../constants/movie";
 import { Movie } from "../typings";
+import { FaPlay } from "react-icons/fa";
+import { InformationCircleIcon } from "@heroicons/react/24/outline";
 
 interface Props {
   netflixOriginals: Movie[];
@@ -34,6 +36,16 @@ function Banner({ netflixOriginals }: Props) {
       <p className="text-sm max-w-sm md:max-w-lg lg:max-w-2xl text-shadow-lg">
         {movie?.overview}
       </p>
+      <div className="flex space-x-3">
+        <button className="bannerButton bg-white text-black">
+          <FaPlay />
+          Play
+        </button>
+        <button className="bannerButton bg-gray-[.5]">
+          <InformationCircleIcon className="w-4 h-4" />
+          More Info
+        </button>
+      </div>
     </div>
   );
 }
