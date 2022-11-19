@@ -19,9 +19,9 @@ function Thumbnail({ movie }: Props) {
       onClick={() => {
         setCurrentMovie(movie);
         setShowModal(true);
-        setTimeout(() => {
-          console.log(currentMovie);
-        }, 100);
+        // setTimeout(() => {
+        //   console.log(currentMovie);
+        // }, 100);
       }}
     >
       <Image
