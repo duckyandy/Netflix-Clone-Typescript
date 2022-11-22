@@ -4,6 +4,8 @@ import { baseURL } from "../constants/movie";
 import { Movie } from "../typings";
 import { FaPlay } from "react-icons/fa";
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
+import { RecoilState, useRecoilState } from "recoil";
+import { modalState, movieState } from "../atoms/modalAtom";
 
 interface Props {
   netflixOriginals: Movie[];
@@ -11,6 +13,8 @@ interface Props {
 
 function Banner({ netflixOriginals }: Props) {
   const [movie, setMovie] = useState<Movie | null>(null);
+  const [currentMovie, setCurrentMovie] = useRecoilState(movieState);
+  const [showModal, setShowModal] = useRecoilState(modalState);
 
   //Have to use useEffect hook otherwise get rehydration issues when trying to
   //directly put netflixOriginals.title below!
@@ -41,7 +45,13 @@ function Banner({ netflixOriginals }: Props) {
           <FaPlay />
           Play
         </button>
-        <button className="bannerButton bg-gray-[.5]">
+        <button
+          className="bannerButton bg-gray-[.5]"
+          onClick={() => {
+            setCurrentMovie(movie);
+            setShowModal(true);
+          }}
+        >
           <InformationCircleIcon className="w-4 h-4" />
           More Info
         </button>

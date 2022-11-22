@@ -26,7 +26,7 @@ const Home = ({
   const showModal = useRecoilState(modalState);
 
   return (
-    <div className="bg-gradient-to-b from-gray-900/10 to-black">
+    <div className="relative h-screen bg-gradient-to-b from-gray-900/10 to-black">
       <Head>Home - Netflix</Head>
       <Header />
       <main className="space-y-8">

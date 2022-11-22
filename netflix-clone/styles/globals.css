@@ -14,4 +14,8 @@
     .bannerButton{
         @apply flex items-center gap-x-2 rounded px-5 py-2 hover:opacity-75 font-bold transition duration-[.5s]  md:text-xl md:px-8 md:py-3
     }
+    .modalButton{
+        @apply relative flex h-11 w-11 items-center justify-center rounded-full bg-black
+        transition duration-200 hover:border-white hover:bg-white hover:text-black
+    }
 }
