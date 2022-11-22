@@ -1,6 +1,6 @@
 # Netflix-Clone-Typescript
 
-Just fetching some data from themoviedb.org and implementing netflix-clone just the front-end with typescript.
+Just fetching some data from themoviedb.org and implementing netflix-clone just the front-end with TypeScript, React, and NextJS.
 
 For CSS, used TailwindCSS.
 
